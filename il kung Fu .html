@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondo del Kung Fu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+        /* Classe di evidenziazione per l'animazione */
+        .highlight {
+            background-color: #f9f9f9; /* Colore leggermente più vivido */
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Benvenuti nel Mondo del Kung Fu</h1>
+        <p>Esplora l'Arte del Kung Fu</p>
+    </header>
+    <nav>
+        <a href="#history" onclick="highlightSection('history')">Storia</a>
+        <a href="#styles" onclick="highlightSection('styles')">Stili</a>
+        <a href="#training" onclick="highlightSection('training')">Allenamento</a>
+    </nav>
+    <section id="history">
+        <h2>Storia del Kung Fu</h2>
+        <p>Il Kung Fu, anche conosciuto come arti marziali cinesi, ha una lunga e ricca storia. È nato oltre 4.000 anni fa nell'antica Cina ed è evoluto nel tempo in vari stili e forme.</p>
+        <p>La leggenda narra che il Kung Fu fu sviluppato da Bodhidharma, un monaco buddista indiano che viaggiò in Cina per diffondere il Buddhismo. Insegnò agli monaci del Tempio Shaolin esercizi fisici per migliorare la loro salute e la loro forza, che alla fine si evolsero in tecniche di arti marziali.</p>
+        <p>Nella storia, il Kung Fu è stato praticato per autodifesa, fitness fisico, crescita spirituale e come forma di espressione artistica.</p>
+    </section>
+    <section id="styles">
+        <h2>Stili di Kung Fu</h2>
+        <p>Esistono molti stili diversi di Kung Fu, ognuno con le proprie caratteristiche e tecniche uniche. Alcuni dei più conosciuti includono:</p>
+        <ul>
+            <li><strong>Shaolin:</strong> Sviluppato nel Tempio Shaolin, questo stile enfatizza movimenti potenti e dinamici ed è noto per i suoi metodi di allenamento rigorosi.</li>
+            <li><strong>Wing Chun:</strong> Conosciuto per le sue tecniche di combattimento a distanza ravvicinata e movimenti efficienti, il Wing Chun è spesso praticato per l'autodifesa.</li>
+            <li><strong>Tai Chi:</strong> Il Tai Chi è uno stile grazioso e fluido noto per i suoi movimenti lenti e meditativi che favoriscono il rilassamento, l'equilibrio e la pace interiore.</li>
+            <li><strong>Baguazhang:</strong> Il Baguazhang si concentra su movimenti circolari e su una tecnica evasiva dei piedi, rendendolo efficace per la difesa e l'agilità.</li>
+            <li><strong>Xingyi Quan:</strong> Questo stile enfatizza movimenti aggressivi e lineari e colpi potenti, spesso paragonati ai movimenti degli animali.</li>
+        </ul>
+    </section>
+    <section id="training">
+        <h2>Allenamento nel Kung Fu</h2>
+        <p>L'allenamento nel Kung Fu coinvolge una combinazione di condizionamento fisico, pratica delle forme, sparring e studio filosofico. È un percorso di miglioramento e scoperta di sé per tutta la vita.</p>
+        <p>Gli elementi chiave dell'allenamento nel Kung Fu includono:</p>
+        <ul>
+            <li><strong>Forme:</strong> Anche conosciute come "katas" in altre arti marziali, le forme sono una serie di movimenti coreografati che insegnano tecniche, movimenti dei piedi e coordinazione.</li>
+            <li><strong>Sparring:</strong> Praticare le tecniche contro un partner in situazioni di combattimento controllate aiuta gli studenti a sviluppare tempismo, distanza e adattabilità.</li>
+            <li><strong>Condizionamento:</strong> Forza, flessibilità, resistenza ed equilibrio sono tutti aspetti importanti del condizionamento nel Kung Fu. L'allenamento include spesso esercizi come flessioni, sit-up, stretching e lavoro sulla postura.</li>
+            <li><strong>Meditazione e Filosofia:</strong> Molti stili di Kung Fu incorporano meditazione e insegnamenti filosofici nella loro pratica, promuovendo chiarezza mentale, disciplina e crescita spirituale.</li>
+        </ul>
+    </section>
+
+    <!-- Aggiunta delle immagini -->
+    <section class="gallery">
+        <img src="immagine1.jpeg" alt="Immagine 1">
+        <img src="immagine2.jpeg" alt="Immagine 2">
+        <img src="immagine3.jpeg" alt="Immagine 3">
+    </section>
+
+    <script>
+        function highlightSection(sectionId) {
+            // Rimuovi la classe di evidenziazione da tutte le sezioni
+            document.querySelectorAll('section').forEach(function(section) {
+                section.classList.remove('highlight');
+            });
+
+            // Aggiungi la classe di evidenziazione alla sezione cliccata
+            document.getElementById(sectionId).classList.add('highlight');
+
+            // Rimuovi la classe di evidenziazione dopo 2 secondi
+            setTimeout(function() {
+                document.getElementById(sectionId).classList.remove('highlight');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
